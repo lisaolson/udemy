@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/register.css">
+
+<div class="container">
+    <h2 class="animated fadeInLeft form_title">Register</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="animated fadeInRight form-style-8">
+          <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" value="Sign Up" />
+          </form>
+        </div>
+      </div>
+
+    <div class="col-md-8">
+      <div class="animated fadeInDown thumbnail">
+          <img src="../images/latte6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|+Poiret+One' rel='stylesheet' type='text/css'>
+
+
+<% include partials/footer %>

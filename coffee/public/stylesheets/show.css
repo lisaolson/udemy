@@ -1,0 +1,92 @@
+.middle {
+  padding: 5%;
+}
+
+.middle h5, h4, p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 15px;
+  border-left: 1px solid pink;
+  padding-left: 3%;
+}
+
+#show_image {
+  height: 390px;
+  padding: 14% 0;
+}
+
+#map {
+  height: 390px;
+  padding: 7% 0;
+}
+
+#username {
+  text-align: right;
+  border-right: 1px solid black;
+  font-family: 'Dancing Script';
+}
+
+#comment {
+    font-family: 'Dancing Script', cursive;
+}
+
+.col-md-4 {
+  font-family: 'Poiret One';
+}
+
+#show_name {
+  font-family: 'Dancing Script', cursive;
+  margin: 0 0 1% 4%;
+  color: #848484;
+}
+
+.middle p{
+  font-family: 'Dancing Script', cursive;
+}
+
+#sub_by {
+  font-family: 'Poiret One';
+}
+
+#new_comment {
+  font-size: 25px;
+  text-align: center;
+}
+
+#new_comment a{
+  color: pink;
+  padding: 1%;
+}
+
+#new_comment a:hover {
+
+}
+
+.btn-warning {
+  background-color: transparent;
+  border-color: transparent;
+  color: #787878;
+}
+
+.btn-danger {
+  background-color: transparent;
+  border-color: transparent;
+  color: #787878;
+}
+
+#buttons {
+  font-family: 'Poiret One';
+}
+
+  @media screen and (min-width: 480px) {
+    #show_image {
+        height: 350px;
+        padding: 20% 0;
+    }
+    #map {
+      height: 350px;
+      padding: 7% 0;
+    }
+    .middle {
+      padding: 4%;
+    }
+  }

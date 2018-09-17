@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/new.css">
+
+<div class="container">
+        <div class="animated fadeInDown form-style-8">
+            <form action="/cafes/<%=cafe_id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+              <input type="text" name="comment[text]" value="<%= comment.text %>">
+              <input id="submit" type="Submit" value="Submit" />
+            </form>
+          </div>
+
+</div>
+
+
+<footer>Made with <i class="fa fa-heart"></i> & <i class="fa fa-coffee"></i></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>
+<style media="screen">
+  footer {
+    position: fixed;
+  }
+</style>
+</body>
+</html>

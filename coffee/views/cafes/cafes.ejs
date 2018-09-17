@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/cafes.css">
+
+<div class="animated zoomIn scrollmenu">
+    <% cafes.forEach(function(cafe){ %>
+                    <!-- <span id="cafe_name"><%= cafe.name %></span> -->
+        <div class="element">
+            <div class="thumbnail">
+              <a href="/cafes/<%= cafe._id %>">
+                <img src="<%= cafe.image %>" />
+              </a>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,48 @@
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  body {
+      background-color: #EEE4E1;
+      color: #555;
+      font-size: 1.1em;
+      font-family: 'Lato', sans-serif;
+  }
+
+  .scrollmenu {
+    padding: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .element {
+    display: inline-block;
+    background-color: #000;
+    color: white;
+    width: 30%;
+    height: 300px;
+    text-align: justify;
+    shape-inside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    shape-padding: 20px;
+    transition: all 2s ease;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  .element:hover {
+    shape-inside: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+
+#cafe_name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 15px;
+  position: absolute;
+}
+
+@media screen and (min-width: 480px) {
+  .element {
+    width: 33%;
+    height: 250px;
+  }
+}

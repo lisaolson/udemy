@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/new.css">
+
+    <div class="container">
+        <!-- <h2 class="form_title" class="animated fadeInLeft">Add New Comment to <%= cafe.name %></h2> -->
+        <div class="col-md-7 image">
+        <div class="animated fadeInLeft thumbnail">
+            <img id="show_image" class="image-responsive" src="<%= cafe.image %>">
+          </div>
+        </div>
+        <div class="col-md-5 comment">
+          <div class="animated fadeInRight form-style-8">
+              <form action="/cafes/<%= cafe._id %>/comments" method="POST">
+                <textarea name="comment[text]" rows="4" cols="400" placeholder="Comment" overflow="scroll" required></textarea>
+                  <input id="submit" type="Submit" value="Add" />
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <footer>Made with <i class="fa fa-heart"></i> & <i class="fa fa-coffee"></i>
+
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <script type="text/javascript">
+      //auto expand textarea
+      function adjust_textarea(h) {
+          h.style.height = "20px";
+          h.style.height = (h.scrollHeight)+"px";
+      }
+      </script>
+      <style media="screen">
+        footer {
+          position: fixed;
+          bottom: 0;
+        }
+        .footer {
+          position: relative;
+          bottom: 0;
+        }
+        .container {
+          margin-top: 2%;
+          padding: 0;
+        }
+        .image {
+          padding-top: 4%;
+          padding-left: 0;
+        }
+        .comment {
+          padding-top: 15%;
+        }
+      </style>
+
+      </body>
+      </html>

@@ -1,0 +1,132 @@
+.white {
+    background: white;
+    height: 500px;
+    margin-top: 2%;
+}
+
+.white-bg {
+  background: white;
+  margin-bottom: 2%;
+  width: 75%;
+}
+
+.title_para {
+  font-family: 'Poiret One', cursive;
+  padding-top: 1%;
+}
+
+.index {
+  margin-top: 1%;
+}
+
+.if_you p{
+  padding-left: 5%;
+}
+img.image{
+  margin-top: 5%;
+  margin-left: 5%;
+  padding: 0;
+}
+
+#welcome {
+  letter-spacing: 4px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #777;
+  padding-left: 25%;
+  margin-top: 5%;
+}
+
+#sign {
+  height: 500px;
+}
+.font {
+    font-family: 'Poiret One', cursive;
+}
+
+.the_only {
+  text-align: right;
+  font-size: 13px;
+  border-right: 1px solid white;
+  padding-top: 8%;
+  padding-left: 6%;
+}
+.a_links {
+  color: #777;
+  background: white;
+  padding: 30px;
+}
+
+.a_links:hover {
+  cursor: pointer;
+  background: #777;
+  color: #eee4e1;
+}
+
+#home_links {
+  padding-left: 25%;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  text-align: left;
+  padding: 0 0 0 5%;
+  letter-spacing: 3px;
+  margin: 0;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 0s;
+  color: #4C4C4C;
+}
+h2 {
+  font-family: 'Great Vibes', cursive;
+}
+.director i {
+  font-size: 25px;
+  color: #555;
+  padding-left: 96%;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 3;
+}
+  #coffee-name {
+    color: white;
+    text-align: center;
+  }
+.black_ {
+  height: 385px;
+}
+#content {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 20px;
+}
+
+#have p{
+  font-family: 'Dancing Script', cursive;
+  text-align: right;
+  font-size: 25px;
+  color: white;
+}
+
+body > div.container.index > div.row.font > div.animated.fadeInLeft.col-md-5.col-sm-5.if_you{
+  padding-top: 5%;
+  border-left: 1px solid white;
+}
+
+
+@media screen and (min-width: 480px) {
+  img.image {
+    margin: 10%;
+    padding-top: 15%;
+    }
+  #sign {
+    height: 440px;
+  }
+  .the_only {
+    padding-top: 7%;
+    padding-bottom: 1%;
+  }
+  .if_you {
+    padding: 0;
+  }
+}

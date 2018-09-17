@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/new.css">
+<div class="container">
+  <h2 class="animated fadeInLeft form_title" style="text-align: center;"> <%= cafe.name %></h2>
+      <a id="form_title_a" class="animated fadeInLeft form_title" href="/cafes"><i class="fa fa-long-arrow-left"></i> Back</a>
+
+      <div class="animated fadeInRight form-style-8">
+        <form action="/cafes/<%= cafe._id %>?_method=PUT" method="POST">
+            <input class="form-control" type="text" name="cafe[name]" value="<%= cafe.name %>" >
+            <input class="form-control" type="number" name="cafe[price]" value="<%= cafe.price %>" min="0.01" step="0.01">
+            <input class="form-control" type="text" name="location" id="location" value="<%= cafe.location %>">
+            <input class="form-control" type="text" name="cafe[image]" value="<%= cafe.image %>" >
+            <input class="form-control" type="text" name="cafe[description]" value="<%= cafe.description %>">
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+</div>
+
+<% include ../partials/footer %>

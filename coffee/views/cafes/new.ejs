@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/new.css">
+
+<div class="container">
+    <h2 class="animated fadeInLeft form_title">Create New Cafe</h2>
+    <a id="form_title_a" class="animated fadeInLeft form_title" href="/cafes"><i class="fa fa-long-arrow-left"></i> Back</a>
+
+    <div class="animated fadeInRight form-style-8">
+          <form class="form_" action="/cafes" method="post">
+              <input type="text" name="name" value="" placeholder="Name of Cafe" required>
+              <input type="number" name="price" value="" placeholder="Price per Latte" min="0.01" step="0.01" required>
+              <input type="text" name="location" id="location" placeholder="Location; i.e. 'San Diego, CA'" required>
+              <input type="url" name="image" value="" placeholder="Image Url" required>
+              <textarea name="description" rows="4" cols="400" placeholder="Description" overflow="scroll" required></textarea>
+          <input id="submit" type="submit" value="Add" />
+        </form>
+      </div>
+</div>
+
+<% include ../partials/footer %>

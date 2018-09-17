@@ -1,0 +1,147 @@
+<% include ../partials/header %>
+<br><br><br>
+<link rel="stylesheet" href="/stylesheets/show.css">
+
+  <div class="row thumbnail">
+    <div class="col-md-4 col-sm-4 desc">
+      <div class="thumbnail">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 desc middle">
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Name</strong>
+            </div>
+            <div class="col-md-8">
+              <h5><%= cafe.name %></h5>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <strong>Description</strong>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h5><%= cafe.description %></h5>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <strong>Location</strong>
+        </div>
+        <div class="col-md-8">
+          <h5><%= cafe.location %></h5>
+        </div>
+    </div>
+      <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <strong>Price</strong>
+        </div>
+          <div class="col-md-8 col-sm-8">
+            <h5>$<%= cafe.price %>/latte</h5>
+          </div>
+      </div>
+        <!-- <h4><a href="#"><%= cafe.name %></a></h4> -->
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+                <strong>Submitted By</strong>
+            </div>
+          <div class="col-md-8 col-sm-8">
+            <em><h5><%= cafe.author.username %></h5></em>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 show_image desc">
+      <div class="thumbnail">
+          <img id="show_image" class="image-responsive" src="<%= cafe.image %>">
+          <% if(currentUser && cafe.author.id.equals(currentUser._id)){ %>
+            <a class="btn btn-warning" href="/cafes/<%= cafe._id %>/edit">Edit</a>
+            <form class="delete-form" action="/cafes/<%=cafe._id%>?_method=DELETE" method="POST">
+              <button class="btn btn-danger">Delete</button>
+            </form>
+          <% } %>
+        </div>
+
+        </div>
+        <hr>
+        <br><br>
+
+        <div class="col-md-12 col-sm-12 space_top">
+          <hr>
+
+          <% cafe.comments.forEach(function(comment){ %>
+            <div  id="username"class="col-md-4 col-sm-4">
+              <strong><span><%= comment.author.username %></span></strong>
+            </div>
+                <div  id="comment" class="col-md-8 col-sm-8">
+                  <p>
+                      <span><%= comment.text %></span>
+                  </p>
+
+
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                  <span id="buttons">
+                    <a class="btn btn-xs btn-warning"
+                      href="/cafes/<%=cafe._id %>/comments/<%=comment._id%>/edit">
+                       Edit
+                    </a>
+                    <form class="delete-form" action="/cafes/<%=cafe._id %>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                      <button class="btn btn-xs btn-danger"> Delete </button>
+
+                    </form>
+                  </span>
+              <% } %>
+              </div>
+          <% }) %>
+
+          <p id="new_comment"><a href="/cafes/<%= cafe._id %>/comments/new">Add New Comment</a></p>
+
+        </div>
+
+      </div>
+
+
+        <!-- <div class="well">
+          <div class="text-right">
+
+          </div>
+          <hr>
+
+        </div>
+      </div>
+    </div> -->
+
+
+<script>
+  function initMap() {
+    var lat = <%= cafe.lat %>;
+    var lng = <%= cafe.lng %>;
+    var center = {lat: lat, lng: lng };
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= cafe.name %><br />
+      <%= cafe.location %></strong>
+      <p><%= cafe.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZTrPNCCpX21VSNnhb1EMISAhAuO1So3M&callback=initMap"
+ async defer></script>
+
+<% include ../partials/footer %>

@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+
+<div class="container">
+
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+  <h2 class="animated fadeInLeft form_title" id="login">Login</h2>
+
+  <div class="row">
+    <div class="col-md-4 form">
+        <div class="animated fadeInRight form-style-8">
+          <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="username" />
+            <input type="password" name="password" placeholder="password" />
+            <input id="submit" type="submit" value="Login" />
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="animated fadeInDown thumbnail">
+            <img src="../images/grounds.jpg" alt="">
+        </div>
+      </div>
+  </div>
+</div>

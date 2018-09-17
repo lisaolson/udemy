@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Dancing+Script|Dawning+of+a+New+Day|Italianno|Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+  </head>
+  <body>
+
+    <nav class="animated fadeIn navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a  class="navbar-brand" href="/home">LatteDarling</a>
+          <!-- <ul class="nav navbar-nav">
+            <li id="middle"><a href="/cafes"><i id="coffee_mug" class="fa fa-coffee" aria-hidden="true"></i>'s</a></li>
+          </ul> -->
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+          <%  if(!currentUser){ %>
+              <li><a href="/login">Login <i class="fa fa-user" aria-hidden="true"></i></a></li>
+              <li><a href="/register">Join <i class="fa fa-puzzle-piece" aria-hidden="true"></i></a></li>
+          <%  } else { %>
+              <li id="big_list"><a><span id="username"><i class="fa fa-user"></i> <%= currentUser.username %> </span></a></li>
+              <li><a href="/cafes/new"><i class="fa fa-plus" aria-hidden="true"></i>Add Cafe</a></li>
+              <li><a href="/logout">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+          <%  } %>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <span id="coffee_nav"><a href="/cafes"><i id="coffee_mug" class="fa fa-coffee"><span id="s">'s</span></i></a></span>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+  </div>
+      <% } %>
+  <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert">
+        <%= success %>
+      </div>
+  <% } %>
+</div>
