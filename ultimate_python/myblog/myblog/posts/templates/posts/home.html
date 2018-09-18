@@ -1,0 +1,10 @@
+<h1>Welcome!</h1>
+
+<h2>Latest Posts</h2>
+
+{% for post in posts.all %}
+<a href="{% url 'post_detail' post.id %}">{{ post.title }}</a><br>
+{{ post.pub_date_pretty }}<br>
+<img src="{{ post.image.url }}" /><br>
+{{ post.body_summary }}<br><br>
+{% endfor %}
